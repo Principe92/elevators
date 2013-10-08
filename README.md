@@ -1,5 +1,5 @@
 elevators
-=========
+==========
 
 Multithreaded elevator simulation for Saint Louis University CS 324 Operating Systems.
 
