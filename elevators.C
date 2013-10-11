@@ -47,6 +47,7 @@ void Elevator::run()
   open_door();
 
   // Pick up and drop off passengers.
+  //sem_post(semaphore);
 }
 
 //
@@ -59,5 +60,17 @@ void take_elevator(const Person *who, int origin, int destination)
 {
   // Should not return until the person has taken an elevator
   // to their destination floor.
+
+
+  //PSEUDOCODE
+  Rider me = {who.name, origin, destination};
+  sem_init(me_arrived);
+  enqueue(me);
+  sem_wait(elevator_arrived);
+
 }
 
+struct Rider{
+  Person name;
+  int origin, destination;
+}
