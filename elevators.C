@@ -113,7 +113,7 @@ sem_init(&waiters,0,0);
       if (nfloor < current_destination)
         current_destination = nfloor;
     }
-    for (current_floor; current_floor != current_destination; current_floor += direction){
+    for (current_floor + direction; current_floor != current_destination + direction; current_floor += direction){
       while (!riders[current_floor].empty()){
         cerr << "Letting Riders Out" << endl;
         sleep(1);
