@@ -86,6 +86,8 @@ sem_init(&waiters,0,0);
     sem_wait(&waiters); 
 
    // first passenger, go get em
+    cout << "Someone is waiting!" << endl;
+
     move_to_floor(or0);
     current_floor = or0;
     open_door();
@@ -96,9 +98,10 @@ sem_init(&waiters,0,0);
     else if (!waitdown[or0].empty())
       pass = waitdown[or0].dequeue();
     onboard++;
+    peeps--;
 
     int nfloor = pass->destination;
-    cerr <<"Heading to floor: " << nfloor << endl;
+    cout <<"Heading to floor: " << nfloor << endl;
     riders[nfloor].enqueue(pass);
     close_door();
     
@@ -113,10 +116,9 @@ sem_init(&waiters,0,0);
       if (nfloor < current_destination)
         current_destination = nfloor;
     }
-    for (current_floor + direction; current_floor != current_destination + direction; current_floor += direction){
+    for (current_floor; current_floor != current_destination + direction; current_floor += direction){
       while (!riders[current_floor].empty()){
-        cerr << "Letting Riders Out" << endl;
-        sleep(1);
+        cout << "Kicking Riders Out" << endl;
         open_door();
         Rider* temp = riders[current_floor].dequeue();
         sem_post(&temp->semwait);
@@ -125,8 +127,7 @@ sem_init(&waiters,0,0);
 
       if (direction == 1){
         while (!waitup[current_floor].empty()){
-          cerr << "Letting Riders In" << endl;
-          sleep(1);
+          cout << "Letting Riders In. Number of people waiting is " << peeps-1 << endl;
           if (!door_is_open()) open_door();
           Rider* temp = waitup[current_floor].dequeue();
           int dest = temp->destination;
@@ -137,12 +138,11 @@ sem_init(&waiters,0,0);
           sem_wait(&waiters);
         }
         if (door_is_open()) close_door();
-        move_up();
+        if (current_floor < 10) move_up();
       }
       else if (direction == -1){
         while (!waitdown[current_floor].empty()){
-          cerr << "Letting Riders In" << endl;
-          sleep(1);
+          cout << "Letting Riders In. Number of people waiting is " << peeps-1 << endl;
           if (!door_is_open()) open_door();
           Rider* temp = waitdown[current_floor].dequeue();
           int dest = temp->destination;
@@ -153,8 +153,9 @@ sem_init(&waiters,0,0);
           sem_wait(&waiters);
         }
         if (door_is_open()) close_door();
-        move_down();
+        if (current_floor > 0) move_down();
       }
+      cout << "Loop over for floor " << current_floor << endl;
     }
   }
 }
@@ -169,6 +170,8 @@ void take_elevator(const Person *who, int origin, int destination)
 {
   // Should not return until the person has taken an elevator
   // to their destination floor.
+ 
+  cout << "Someone is taking the elevator!" << endl;
     
   //PSEUDOCODE
   Rider me;
@@ -180,15 +183,17 @@ void take_elevator(const Person *who, int origin, int destination)
 
   if (peeps == 0){
    or0 = origin;
+   cout << "First waiter" << endl;
    //sem_post(&waiters);
   }
-  sem_post(&waiters);
+  //sem_post(&waiters);
   
   if (up)
     waitup[origin].enqueue(&me);
   else
     waitdown[origin].enqueue(&me);
 
+  sem_post(&waiters);
   passengers.enqueue(&me);
   sem_wait(&me.semwait);
   peeps++;

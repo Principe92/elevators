@@ -1,0 +1,191 @@
+-------------------------------------------
+Elevators Simulation Version 4.2 - 9/30/13
+Building with floors 0-10 and 1 elevators
+-------------------------------------------
+[Phil]: entered building on floor 1
+[Phil]: moving to floor 10
+Someone is taking the elevator!
+--- tick 0 ---
+Someone is waiting!
+--- tick 1 ---
+[Elevator 0] (carrying nobody): door is open
+Heading to floor: 10
+--- tick 2 ---
+[Elevator 0] (carrying [Phil]): door is closed
+--- tick 3 ---
+[Elevator 0] (carrying [Phil]): moved to floor 2
+Loop over for floor 1
+--- tick 4 ---
+[Elevator 0] (carrying [Phil]): moved to floor 3
+Loop over for floor 2
+--- tick 5 ---
+[Elevator 0] (carrying [Phil]): moved to floor 4
+Loop over for floor 3
+--- tick 6 ---
+[Elevator 0] (carrying [Phil]): moved to floor 5
+Loop over for floor 4
+--- tick 7 ---
+[Elevator 0] (carrying [Phil]): moved to floor 6
+Loop over for floor 5
+--- tick 8 ---
+[Elevator 0] (carrying [Phil]): moved to floor 7
+Loop over for floor 6
+--- tick 9 ---
+[Elevator 0] (carrying [Phil]): moved to floor 8
+Loop over for floor 7
+--- tick 10 ---
+[Elevator 0] (carrying [Phil]): moved to floor 9
+Loop over for floor 8
+--- tick 11 ---
+[Elevator 0] (carrying [Phil]): moved to floor 10
+Loop over for floor 9
+Kicking Riders Out
+--- tick 12 ---
+[Elevator 0] (carrying [Phil]): door is open
+[Phil]: on floor 10
+[Phil]: working for 1
+--- tick 13 ---
+[Elevator 0] (carrying nobody): door is closed
+Loop over for floor 10
+[Phil]: moving to floor 0
+Someone is taking the elevator!
+Someone is waiting!
+--- tick 14 ---
+[Elevator 0] (carrying nobody): moved to floor 9
+--- tick 15 ---
+[Elevator 0] (carrying nobody): moved to floor 8
+--- tick 16 ---
+[Elevator 0] (carrying nobody): moved to floor 7
+--- tick 17 ---
+[Elevator 0] (carrying nobody): moved to floor 6
+--- tick 18 ---
+[Elevator 0] (carrying nobody): moved to floor 5
+--- tick 19 ---
+[Elevator 0] (carrying nobody): moved to floor 4
+--- tick 20 ---
+[Elevator 0] (carrying nobody): moved to floor 3
+--- tick 21 ---
+[Elevator 0] (carrying nobody): moved to floor 2
+--- tick 22 ---
+[Elevator 0] (carrying nobody): moved to floor 1
+--- tick 23 ---
+[Elevator 0] (carrying nobody): door is open
+Heading to floor: 0
+--- tick 24 ---
+[Elevator 0] (carrying [Phil]): door is closed
+--- tick 25 ---
+[Elevator 0] (carrying [Phil]): moved to floor 0
+Loop over for floor 1
+Kicking Riders Out
+--- tick 26 ---
+[Elevator 0] (carrying [Phil]): door is open
+[Phil]: on floor 0
+[Phil]: working for 1
+--- tick 27 ---
+[Elevator 0] (carrying nobody): door is closed
+Loop over for floor 0
+[Phil]: moving to floor 5
+Someone is taking the elevator!
+Someone is waiting!
+--- tick 28 ---
+[Elevator 0] (carrying nobody): moved to floor 1
+--- tick 29 ---
+[Elevator 0] (carrying nobody): door is open
+Heading to floor: 5
+--- tick 30 ---
+[Elevator 0] (carrying [Phil]): door is closed
+--- tick 31 ---
+[Elevator 0] (carrying [Phil]): moved to floor 2
+Loop over for floor 1
+--- tick 32 ---
+[Elevator 0] (carrying [Phil]): moved to floor 3
+Loop over for floor 2
+--- tick 33 ---
+[Elevator 0] (carrying [Phil]): moved to floor 4
+Loop over for floor 3
+--- tick 34 ---
+[Elevator 0] (carrying [Phil]): moved to floor 5
+Loop over for floor 4
+Kicking Riders Out
+--- tick 35 ---
+[Elevator 0] (carrying [Phil]): door is open
+[Phil]: on floor 5
+[Phil]: working for 1
+--- tick 36 ---
+[Elevator 0] (carrying nobody): door is closed
+[Phil]: moving to floor 3
+Someone is taking the elevator!
+--- tick 37 ---
+[Elevator 0] (carrying nobody): moved to floor 6
+Loop over for floor 5
+Someone is waiting!
+--- tick 38 ---
+[Elevator 0] (carrying nobody): moved to floor 5
+--- tick 39 ---
+[Elevator 0] (carrying nobody): moved to floor 4
+--- tick 40 ---
+[Elevator 0] (carrying nobody): moved to floor 3
+--- tick 41 ---
+[Elevator 0] (carrying nobody): moved to floor 2
+--- tick 42 ---
+[Elevator 0] (carrying nobody): moved to floor 1
+--- tick 43 ---
+[Elevator 0] (carrying nobody): door is open
+Heading to floor: 3
+--- tick 44 ---
+[Elevator 0] (carrying [Phil]): door is closed
+--- tick 45 ---
+[Elevator 0] (carrying [Phil]): moved to floor 2
+Loop over for floor 1
+--- tick 46 ---
+[Elevator 0] (carrying [Phil]): moved to floor 3
+Loop over for floor 2
+Kicking Riders Out
+--- tick 47 ---
+[Elevator 0] (carrying [Phil]): door is open
+[Phil]: on floor 3
+[Phil]: working for 1
+--- tick 48 ---
+[Elevator 0] (carrying nobody): door is closed
+[Phil]: moving to floor 2
+Someone is taking the elevator!
+--- tick 49 ---
+[Elevator 0] (carrying nobody): moved to floor 4
+Loop over for floor 3
+--- tick 50 ---
+[Elevator 0] (carrying nobody): moved to floor 5
+Loop over for floor 4
+--- tick 51 ---
+[Elevator 0] (carrying nobody): moved to floor 6
+Loop over for floor 5
+Someone is waiting!
+--- tick 52 ---
+[Elevator 0] (carrying nobody): moved to floor 5
+--- tick 53 ---
+[Elevator 0] (carrying nobody): moved to floor 4
+--- tick 54 ---
+[Elevator 0] (carrying nobody): moved to floor 3
+--- tick 55 ---
+[Elevator 0] (carrying nobody): moved to floor 2
+--- tick 56 ---
+[Elevator 0] (carrying nobody): moved to floor 1
+--- tick 57 ---
+[Elevator 0] (carrying nobody): door is open
+Heading to floor: 2
+--- tick 58 ---
+[Elevator 0] (carrying [Phil]): door is closed
+--- tick 59 ---
+[Elevator 0] (carrying [Phil]): moved to floor 2
+Loop over for floor 1
+Kicking Riders Out
+--- tick 60 ---
+[Elevator 0] (carrying [Phil]): door is open
+[Phil]: on floor 2
+[Phil]: working for 1
+--- tick 61 ---
+[Elevator 0] (carrying nobody): door is closed
+[Phil]: leaving the building
+-------------------------------------------
+Finished in 61 ticks.
+Average wait ticks per trip: 3.8
+-------------------------------------------
