@@ -16,6 +16,8 @@ public:
   PCQueue();
   void enqueue(Rider *it);
   Rider *dequeue();
+  bool empty();
+  int size();
 private:
   queue<Rider *> q;
   pthread_mutex_t lock; // protects q
@@ -58,3 +60,12 @@ Rider *PCQueue::dequeue()
   return it;
 }
 
+bool PCQueue::empty()
+{
+  return q.empty();
+}
+
+int PCQueue::size()
+{
+  return q.size();
+}
