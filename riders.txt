@@ -1,0 +1,87 @@
+# One person checks out the building
+Phil 0 10 1 0 1 5 1 3 1 2 1
+
+
+
+-------------------------------------------
+Elevators Simulation Version 4.2 - 9/30/13
+Building with floors 0-10 and 1 elevators
+-------------------------------------------
+[Elevator 0] (carrying nobody): running
+--- tick 0 ---
+[Phil]: entered building on floor 1
+[Phil]: moving to floor 10
+[Phil]: on floor 10
+[Phil]: working for 1
+--- tick 1 ---
+[Elevator 0] (carrying nobody): door is open
+[Phil]: moving to floor 0
+[Phil]: on floor 0
+[Phil]: working for 1
+--- tick 2 ---
+[Phil]: moving to floor 5
+[Phil]: on floor 5
+[Phil]: working for 1
+--- tick 3 ---
+[Phil]: moving to floor 3
+[Phil]: on floor 3
+[Phil]: working for 1
+--- tick 4 ---
+[Phil]: moving to floor 2
+[Phil]: on floor 2
+[Phil]: working for 1
+--- tick 5 ---
+[Phil]: leaving the building
+-------------------------------------------
+Finished in 5 ticks.
+Average wait ticks per trip: -7.4
+-------------------------------------------
+
+
+
+# Two people, each with three work floors 
+Peyton 0 4 1 5 4 2 3
+Phil 3 5 2 6 3 0 1
+
+-------------------------------------------
+Elevators Simulation Version 4.2 - 9/30/13
+Building with floors 0-10 and 1 elevators
+-------------------------------------------
+[Elevator 0] (carrying nobody): running
+[Peyton]: entered building on floor 1
+[Peyton]: moving to floor 4
+[Peyton]: on floor 4
+[Peyton]: working for 1
+--- tick 0 ---
+--- tick 1 ---
+[Elevator 0] (carrying nobody): door is open
+[Peyton]: moving to floor 5
+[Peyton]: on floor 5
+[Peyton]: working for 4
+--- tick 2 ---
+--- tick 3 ---
+[Phil]: entered building on floor 1
+[Phil]: moving to floor 5
+[Phil]: on floor 5
+[Phil]: working for 2
+--- tick 4 ---
+--- tick 5 ---
+[Peyton]: moving to floor 2
+[Peyton]: on floor 2
+[Peyton]: working for 3
+[Phil]: moving to floor 6
+[Phil]: on floor 6
+[Phil]: working for 3
+--- tick 6 ---
+--- tick 7 ---
+--- tick 8 ---
+[Peyton]: leaving the building
+[Phil]: moving to floor 0
+[Phil]: on floor 0
+[Phil]: working for 1
+--- tick 9 ---
+[Phil]: leaving the building
+-------------------------------------------
+Finished in 9 ticks.
+Average wait ticks per trip: -5
+-------------------------------------------

@@ -8,6 +8,24 @@
 #include <stdlib.h>
 #include "building.h"
 #include "elevators.h"
+#include "producer-consumer.C"
+#include <queue>
+#include <string.h>
+#include <stdio.h>
+#include <semaphore.h>
+
+//PCQueue passengers;
+//int peeps = 0;
+vector<PCQueue> passengers;
+vector<int> peeps;
+
+struct Rider{
+  const Person *name; int origin, destination;
+  sem_t wait;
+};
+
+//queue<Rider *> lines;
+
 
 //
 // Elevator constructor
@@ -29,7 +47,12 @@ Elevator::Elevator()
 //
 int Elevator::display_passengers()
 {
-  return 0;
+  for (int i = 0; i < peeps; i++){
+    Rider* temp = passengers.dequeue();
+    temp->name->display();
+    passengers.enqueue(temp);
+  }
+  return peeps;
 }
 
 //
@@ -43,11 +66,24 @@ int Elevator::display_passengers()
 //   
 void Elevator::run()
 {
-  message("running");
-  open_door();
-
-  // Pick up and drop off passengers.
-  //sem_post(semaphore);
+//  peeps = 0;
+  while(1){
+  
+    open_door();
+  
+    Rider *pass = passengers.dequeue();
+    peeps++;
+    int nfloor = pass->origin;
+    cerr <<"Heading to floor: " << nfloor << endl;
+    
+    close_door();
+    
+    move_to_floor(nfloor);
+    
+    
+    // Pick up and drop off passengers.
+    sem_post(&pass->wait);
+  }
 }
 
 //
@@ -60,17 +96,16 @@ void take_elevator(const Person *who, int origin, int destination)
 {
   // Should not return until the person has taken an elevator
   // to their destination floor.
-
-
+  
+  
   //PSEUDOCODE
-  Rider me = {who.name, origin, destination};
-  sem_init(me_arrived);
-  enqueue(me);
-  sem_wait(elevator_arrived);
+  Rider me;
+  me.name = who;
+  me.origin = origin;
+  me.destination = destination;
+  sem_init(&me.wait,0,0);
+  
+  passengers.enqueue(&me);
+  sem_wait(&me.wait);
 
-}
-
-struct Rider{
-  Person name;
-  int origin, destination;
 }

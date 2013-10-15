@@ -9,15 +9,15 @@
 
 using namespace std;
 
-class Object;
+class Rider;
 
 class PCQueue {
 public:
   PCQueue();
-  void enqueue(Object *it);
-  Object *dequeue();
+  void enqueue(Rider *it);
+  Rider *dequeue();
 private:
-  queue<Object *> q;
+  queue<Rider *> q;
   pthread_mutex_t lock; // protects q
   sem_t Qsize;
 };
@@ -28,8 +28,8 @@ PCQueue::PCQueue()
   sem_init(&Qsize,0,0);
 }
 
-// Add an Object to the queue
-void PCQueue::enqueue(Object *it)
+// Add an Rider to the queue
+void PCQueue::enqueue(Rider *it)
 {
   pthread_mutex_lock(&lock);
 
@@ -40,10 +40,10 @@ void PCQueue::enqueue(Object *it)
   sem_post(&Qsize);
 }
 
-// Sleep until there is an Object on the queue, then return it.
-Object *PCQueue::dequeue()
+// Sleep until there is an Rider on the queue, then return it.
+Rider *PCQueue::dequeue()
 {
-  Object *it;
+  Rider *it;
 
   sem_wait(&Qsize);
 
